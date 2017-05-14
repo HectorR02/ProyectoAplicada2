@@ -163,6 +163,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ValidacionesPersonales\OnlyLetters.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\FotoStudioDB.mdf" />

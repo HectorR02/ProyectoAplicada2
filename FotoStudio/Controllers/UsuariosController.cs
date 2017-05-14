@@ -39,8 +39,7 @@ namespace FotoStudio.Controllers
         // GET: Usuarios/Create
         public ActionResult Create()
         {
-            var lis = BLL.UserTypeBLL.GetTypes();
-            ViewBag.Types = lis;
+            ViewBag.Types = BLL.UserTypeBLL.GetTypes();
             return View();
         }
 
@@ -55,6 +54,7 @@ namespace FotoStudio.Controllers
             {                
                 db.Usuario.Add(usuarios);
                 db.SaveChanges();
+               // ViewBag.Types = BLL.UserTypeBLL.GetTypes();
                 return RedirectToAction("Index");
             }
 

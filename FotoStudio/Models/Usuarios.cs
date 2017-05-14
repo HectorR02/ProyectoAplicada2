@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FotoStudio.ValidacionesPersonales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -11,7 +12,7 @@ namespace FotoStudio.Models
     {
         [Key]
         public int Id { get; set; }
-
+        
         [Display(Name = "Nombre Completo"), Required(ErrorMessage = "*Este campo es obligatorio*")]
         [StringLength(100, ErrorMessage = "La longitud del {0} no debe ser menor de {2} caractéres", MinimumLength = 5)]
         public string FullName { get; set; }

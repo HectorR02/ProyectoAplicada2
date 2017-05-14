@@ -30,22 +30,14 @@ namespace FotoStudio.BLL
             }
             return false;
         }
-        public static List<SelectListItem> GetTypes()
+        public static List<TipoUsuarios> GetTypes()
         {
-            List< SelectListItem> lista = new List<SelectListItem>();
+            List<TipoUsuarios> lista = new List<TipoUsuarios>();
             using (var conexion = new FotoStudioDB())
             {
                 try
                 {
-                    foreach (TipoUsuarios type in conexion.UserType)
-                    {
-                        lista.Add(new SelectListItem()
-                        {
-                            Value = type.Id.ToString(),
-                            Text = type.Description,
-                             Selected  = type.Id == 1 ? true : false
-                        });
-                    }
+                    lista = conexion.UserType.ToList();
                 }
                 catch (Exception)
                 {
