@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FotoStudio.DAL;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,11 +14,12 @@ namespace FotoStudio
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            Database.SetInitializer<FotoStudioDB>(new DropCreateDatabaseAlways<FotoStudioDB>());
+            BLL.UserTypeBLL.Guardar();
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Usuarios", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
