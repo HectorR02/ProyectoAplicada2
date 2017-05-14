@@ -47,5 +47,21 @@ namespace FotoStudio.BLL
             }
             return lista;
         }
+        public static string GetDescripcion(int typeId)
+        {
+            using (var conexion = new FotoStudioDB())
+            {
+                try
+                {
+                    return conexion.UserType.Find(typeId).Description;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return "";
+        }
     }
 }

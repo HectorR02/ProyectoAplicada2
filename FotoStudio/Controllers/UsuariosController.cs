@@ -17,7 +17,7 @@ namespace FotoStudio.Controllers
 
         // GET: Usuarios
         public ActionResult Index()
-        {            
+        {
             return View(db.Usuario.ToList());
         }
 
@@ -51,10 +51,10 @@ namespace FotoStudio.Controllers
         public ActionResult Create([Bind(Include = "Id,FullName,UserName,Email,Contraseña,Tipo")] Usuarios usuarios)
         {
             if (ModelState.IsValid)
-            {                
+            {
                 db.Usuario.Add(usuarios);
                 db.SaveChanges();
-               // ViewBag.Types = BLL.UserTypeBLL.GetTypes();
+                // ViewBag.Types = BLL.UserTypeBLL.GetTypes();
                 return RedirectToAction("Index");
             }
 
@@ -73,6 +73,7 @@ namespace FotoStudio.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserType = BLL.UserTypeBLL.GetDescripcion(usuarios.Tipo);
             return View(usuarios);
         }
 
