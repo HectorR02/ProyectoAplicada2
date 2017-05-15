@@ -14,6 +14,7 @@ namespace FotoStudio.DAL
 
         }
 
+        public DbSet<Servicios> Servicios { get; set; }
         public DbSet<Usuarios> Usuario { get; set; }
         public DbSet<TipoUsuarios> UserType { get; set; }
     }

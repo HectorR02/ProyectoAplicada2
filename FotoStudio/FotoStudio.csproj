@@ -173,6 +173,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BLL\UserTypeBLL.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServiciosController.cs" />
     <Compile Include="Controllers\UserTypeController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="DAL\FotoStudioDB.cs" />
@@ -183,8 +184,16 @@
     <Compile Include="Migrations\201705141654494_InitialCreate.Designer.cs">
       <DependentUpon>201705141654494_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705151509392_servicios.cs" />
+    <Compile Include="Migrations\201705151509392_servicios.Designer.cs">
+      <DependentUpon>201705151509392_servicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705151513530_servicios validacion.cs" />
+    <Compile Include="Migrations\201705151513530_servicios validacion.Designer.cs">
+      <DependentUpon>201705151513530_servicios validacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Servivios.cs" />
+    <Compile Include="Models\Servicios.cs" />
     <Compile Include="Models\TipoUsuarios.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -251,10 +260,21 @@
     <Content Include="Views\UserType\Details.cshtml" />
     <Content Include="Views\UserType\Edit.cshtml" />
     <Content Include="Views\UserType\Index.cshtml" />
+    <Content Include="Views\Servicios\Create.cshtml" />
+    <Content Include="Views\Servicios\Delete.cshtml" />
+    <Content Include="Views\Servicios\Details.cshtml" />
+    <Content Include="Views\Servicios\Edit.cshtml" />
+    <Content Include="Views\Servicios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705141654494_InitialCreate.resx">
       <DependentUpon>201705141654494_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151509392_servicios.resx">
+      <DependentUpon>201705151509392_servicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705151513530_servicios validacion.resx">
+      <DependentUpon>201705151513530_servicios validacion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
