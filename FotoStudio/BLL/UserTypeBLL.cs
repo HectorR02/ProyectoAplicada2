@@ -18,7 +18,7 @@ namespace FotoStudio.BLL
                 {
                     conexion.UserType.Add(new Models.TipoUsuarios() { Description = "Administrador" });
                     conexion.UserType.Add(new Models.TipoUsuarios() { Description = "Cajero" });
-                    conexion.UserType.Add(new Models.TipoUsuarios() { Description = "Diseñado" });
+                    conexion.UserType.Add(new Models.TipoUsuarios() { Description = "Diseñador" });
                     conexion.SaveChanges();
                     return true;
                 }
