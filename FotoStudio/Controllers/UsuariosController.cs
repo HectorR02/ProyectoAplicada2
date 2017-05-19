@@ -50,15 +50,16 @@ namespace FotoStudio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,FullName,UserName,Email,Contraseña,Tipo")] Usuarios usuarios)
         {
+            bool resultado = false;
             if (ModelState.IsValid)
             {
-                db.Usuario.Add(usuarios);
-                db.SaveChanges();
-                // ViewBag.Types = BLL.UserTypeBLL.GetTypes();
+                resultado = BLL.UsuariosBLL.Guardar(usuarios);
                 return RedirectToAction("Index");
             }
 
-            return View(usuarios);
+            if(resultado)
+                return View(usuarios);
+            return View(new Usuarios());
         }
 
         // GET: Usuarios/Edit/5
