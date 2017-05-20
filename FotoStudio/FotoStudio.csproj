@@ -171,12 +171,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\ArticulosBLL.cs" />
+    <Compile Include="BLL\ServiciosBLL.cs" />
     <Compile Include="BLL\UserTypeBLL.cs" />
     <Compile Include="BLL\UsuariosBLL.cs" />
+    <Compile Include="Controllers\ArticulosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ServiciosController.cs" />
     <Compile Include="Controllers\UserTypeController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\VentaItemsController.cs" />
+    <Compile Include="Controllers\VentasController.cs" />
     <Compile Include="DAL\FotoStudioDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,10 +198,29 @@
     <Compile Include="Migrations\201705151513530_servicios validacion.Designer.cs">
       <DependentUpon>201705151513530_servicios validacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705201748217_addarticulos.cs" />
+    <Compile Include="Migrations\201705201748217_addarticulos.Designer.cs">
+      <DependentUpon>201705201748217_addarticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705201917590_addventaitems.cs" />
+    <Compile Include="Migrations\201705201917590_addventaitems.Designer.cs">
+      <DependentUpon>201705201917590_addventaitems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705201935055_addservicios.cs" />
+    <Compile Include="Migrations\201705201935055_addservicios.Designer.cs">
+      <DependentUpon>201705201935055_addservicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705202021464_addarticulos1.cs" />
+    <Compile Include="Migrations\201705202021464_addarticulos1.Designer.cs">
+      <DependentUpon>201705202021464_addarticulos1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Articulos.cs" />
     <Compile Include="Models\Servicios.cs" />
     <Compile Include="Models\TipoUsuarios.cs" />
     <Compile Include="Models\Usuarios.cs" />
+    <Compile Include="Models\VentaItems.cs" />
+    <Compile Include="Models\Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -206,9 +230,12 @@
     <Compile Include="ValidacionesPersonales\OnlyLetters.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\FotoStudioDB.mdf" />
+    <Content Include="App_Data\FotoStudioDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\FotoStudioDB_log.ldf">
       <DependentUpon>FotoStudioDB.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -266,6 +293,21 @@
     <Content Include="Views\Servicios\Details.cshtml" />
     <Content Include="Views\Servicios\Edit.cshtml" />
     <Content Include="Views\Servicios\Index.cshtml" />
+    <Content Include="Views\Articulos\Create.cshtml" />
+    <Content Include="Views\Articulos\Delete.cshtml" />
+    <Content Include="Views\Articulos\Details.cshtml" />
+    <Content Include="Views\Articulos\Edit.cshtml" />
+    <Content Include="Views\Articulos\Index.cshtml" />
+    <Content Include="Views\Ventas\Delete.cshtml" />
+    <Content Include="Views\Ventas\Details.cshtml" />
+    <Content Include="Views\Ventas\Edit.cshtml" />
+    <Content Include="Views\Ventas\Index.cshtml" />
+    <Content Include="Views\Ventas\Create.cshtml" />
+    <Content Include="Views\VentaItems\Create.cshtml" />
+    <Content Include="Views\VentaItems\Delete.cshtml" />
+    <Content Include="Views\VentaItems\Details.cshtml" />
+    <Content Include="Views\VentaItems\Edit.cshtml" />
+    <Content Include="Views\VentaItems\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705141654494_InitialCreate.resx">
@@ -276,6 +318,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705151513530_servicios validacion.resx">
       <DependentUpon>201705151513530_servicios validacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705201748217_addarticulos.resx">
+      <DependentUpon>201705201748217_addarticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705201917590_addventaitems.resx">
+      <DependentUpon>201705201917590_addventaitems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705201935055_addservicios.resx">
+      <DependentUpon>201705201935055_addservicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705202021464_addarticulos1.resx">
+      <DependentUpon>201705202021464_addarticulos1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
