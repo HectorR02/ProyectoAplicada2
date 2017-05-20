@@ -16,7 +16,6 @@ namespace FotoStudio.Models
         public string Descripcion { get; set; }
 
         [Display(Name = "Precio"), Required(ErrorMessage = "*Este campo es obligatorio*")]
-        //[DataType(DataType.Currency)]
         public decimal Precio { get; set; }
     }
 }
