@@ -2,33 +2,26 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace FotoStudio.ValidacionesPersonales
 {
     public class OnlyLetters : ValidationAttribute
     {
-        public OnlyLetters() : base ("El campo {0} no puede contener digitos ni caracteres especiales")
-        {
-
-        }
-
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             if (value != null)
             {
-                var chars = value.ToString().ToCharArray();
-                foreach (var item in chars)
-                {
-                    if(Char.IsDigit(item))
-                    {
-                        var msjError = FormatErrorMessage(validationContext.DisplayName);
-                        return new ValidationResult(msjError);
-                    }
-                }
+                string contenido = value.ToString();
+                if (Regex.IsMatch(contenido, @"[A-Za-z]", RegexOptions.IgnoreCase))
+                    return ValidationResult.Success;
+                else
+                    return new ValidationResult("*" + validationContext.DisplayName + " solo acepta letras");
             }
+            else
+                return new ValidationResult("*" + validationContext.DisplayName + " es obligatorio");
 
-            return ValidationResult.Success;
         }
     }
 }
