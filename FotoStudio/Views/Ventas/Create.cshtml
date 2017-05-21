@@ -71,16 +71,19 @@
         </div>
 
         <div class="form-group">
-            <select class="selectpicker">
-                <optgroup label="Picnic">
-                    <option>Mustard</option>
-                    <option>Ketchup</option>
-                    <option>Relish</option>
+            <select class="selectpicker" data-live-search="true" data-width="auto" data-size="6">
+                <optgroup label="Artículos">
+                    @foreach (var item in ViewBag.Articulos)
+                    {
+                        string valor = item.ArticuloId.ToString();
+                        <option data-tokens=@item.Descripcion id=@valor data-subtext="A">@item.Descripcion</option>
+                    }
                 </optgroup>
-                <optgroup label="Camping">
-                    <option>Tent</option>
-                    <option>Flashlight</option>
-                    <option>Toilet Paper</option>
+                <optgroup label="Servicios">
+                    @foreach (var item in ViewBag.Servicios)
+                    {
+                        <option data-tokens=@item.Text id=@item.Value data-subtext="S">@item.Text</option>
+                    }
                 </optgroup>
             </select>
         </div>
@@ -99,5 +102,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-
 }

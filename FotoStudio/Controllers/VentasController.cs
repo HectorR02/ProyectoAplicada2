@@ -46,10 +46,7 @@ namespace FotoStudio.Controllers
                 new SelectListItem(){ Text = "Articulos", Value = "1"},
                 new SelectListItem(){ Text = "Servicios", Value = "2"}
             };
-            ViewBag.Opciones = Opciones;
-            ViewBag.Items = new List<VentaItems>();
-            ViewBag.Item = new VentaItems();
-            ViewBag.Servicios = BLL.ServiciosBLL.Listar();
+            ViewBag.Servicios = BLL.ServiciosBLL.Listado();
             ViewBag.Articulos = BLL.ArticulosBLL.Listar();
             return View();
         }

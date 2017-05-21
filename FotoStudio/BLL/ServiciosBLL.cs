@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace FotoStudio.BLL
 {
@@ -48,6 +49,26 @@ namespace FotoStudio.BLL
                 }
             }
             return listado;
+        }
+        public static List<SelectListItem> Listado()
+        {
+            List<SelectListItem> lista = new List<SelectListItem>();
+            using (var conexion = new FotoStudioDB())
+            {
+                try
+                {
+                    foreach (var item in conexion.Servicios.ToList())
+                    {
+                        lista.Add(new SelectListItem() { Text = item.Descripcion, Value = item.Id.ToString() });
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return lista;
         }
     }
 }
